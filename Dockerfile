@@ -1,5 +1,5 @@
 # using base image
-FROM python:3.7
+FROM python:3.10.4-bullseye
 
 # setting working dir inside container
 WORKDIR /addition_app_flask
@@ -12,6 +12,8 @@ ADD config.ini .
 
 # adding requirements.txt to workdir
 ADD requirements.txt .
+
+RUN apt-get install libpq-dev
 
 # installing flask requirements
 RUN pip install -r requirements.txt

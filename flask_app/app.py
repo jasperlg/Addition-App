@@ -9,11 +9,11 @@ def index():
 
 @app.route('/health')
 def health():
-    return '', 200
+    return 'healthy', 200
 
 @app.route('/ready')
 def ready():
-    return '', 200
+    return 'ready', 200
 
 @app.route('/data', methods=['GET'])
 def data():
